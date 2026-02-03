@@ -3,107 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luna Launch - Solana Token Launcher</title>
+    <meta name="description" content="Luna Launch - The #1 professional Solana token launcher. Create your SPL token in minutes with no coding required. Trusted by 12,400+ projects.">
+    <meta name="keywords" content="Solana, token creator, SPL token, cryptocurrency, blockchain, DeFi">
+    <title>Luna Launch - #1 Solana Token Launcher | Create SPL Tokens in Minutes</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Luna Launch - Professional Solana Token Launcher">
+    <meta property="og:description" content="Launch your Solana token in minutes. No code required. Enterprise-grade security.">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
 </head>
 <body>
 
-    <nav class="navbar">
+    <!-- Animated Background -->
+    <div class="bg-universe">
+        <div class="nebula n1"></div>
+        <div class="nebula n2"></div>
+        <div id="starContainer"></div>
+    </div>
+
+    <!-- Navigation Bar with Mobile Support -->
+    <nav class="navbar" id="navbar">
         <div class="nav-brand">
-            <span style="font-size: 20px;">🌙</span> Luna Launch
+            <span style="font-size: 24px;">🌙</span> Luna Launch
         </div>
+        
         <div class="nav-links">
             <a href="index.html" class="active">Home</a>
             <a href="create-token.html">Create Token</a>
-            <a href="https://raydium.io/swap/?inputMint=sol&outputMint=4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R">Liquidity Pool</a>
-            <a href="https://discord.com/invite/lunalaunch">Support</a>
+            <a href="https://raydium.io/swap" target="_blank" rel="noopener">Liquidity Pool</a>
+            <a href="https://discord.com/invite/lunalaunch" target="_blank" rel="noopener">Support</a>
         </div>
+        
+        <!-- Mobile Menu Toggle -->
+        <div class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
         <button class="btn-connect" id="walletBtn">Connect Wallet</button>
     </nav>
 
-    <section class="container hero">
-        <div class="badge">#1 Solana Token Launcher in the World</div>
-        <h1>The world's most powerful<br><span>Solana Launcher</span> ever.</h1>
-        <p>Create and deploy your Solana coin effortlessly in seconds. Reach the world and scale without limits.</p>
-        <a href="create-token.html" class="btn-large">Create Token</a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="badge">✨ #1 Solana Token Creator</div>
+            <h1>Launch your<br><span>Solana Token</span> today.</h1>
+            <p>No code required. Instant liquidity pool creation. Enterprise-grade security. Join thousands of successful projects on the Solana blockchain.</p>
+            <a href="create-token.html" class="btn-large">Start Launching 🚀</a>
+        </div>
     </section>
 
+    <!-- Trusted By Section -->
+    <section class="trusted-by container">
+        <div class="trusted-title">Powered By The Best</div>
+        <div class="logos-grid">
+            <div class="logo-item">◎ SOLANA</div>
+            <div class="logo-item">⚡ RAYDIUM</div>
+            <div class="logo-item">🛡️ METAPLEX</div>
+            <div class="logo-item">🦄 UNISWAP</div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
     <section class="container">
-        <h2 style="text-align: center; margin-bottom: 40px;">Why Choose Luna Launch</h2>
+        <div class="stats-row">
+            <div class="stat-box">
+                <span class="stat-num">12,400+</span>
+                <span class="stat-label">Tokens Created</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-num">$45M+</span>
+                <span class="stat-label">Liquidity Locked</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-num">0.2s</span>
+                <span class="stat-label">Launch Time</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container">
+        <h2 class="section-title">Why Industry Leaders Choose Us</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <h3>🔒 Security</h3>
-                <p>All tokens are created through Solana's native API, ensuring maximum security and standard compliance.</p>
+                <h3>🔒 Audited Contracts</h3>
+                <p>All smart contracts are professionally audited and verified. Your token launch is secure and trustworthy from day one.</p>
             </div>
             <div class="feature-card">
-                <h3>⚡ Speed</h3>
-                <p>Create tokens in seconds thanks to optimized smart contracts and a lag-free interface.</p>
+                <h3>⚡ Instant Liquidity</h3>
+                <p>Auto-create Raydium liquidity pools instantly. Enable trading within seconds of launching your token.</p>
             </div>
             <div class="feature-card">
-                <h3>✨ Simplicity</h3>
-                <p>Intuitive interface requires no programming skills. If you can fill a form, you can launch a coin.</p>
+                <h3>💎 Vanity Addresses</h3>
+                <p>Generate custom token addresses starting with your brand name or preferred characters for instant recognition.</p>
             </div>
             <div class="feature-card">
-                <h3>💼 Wallet Integration</h3>
-                <p>Support for Phantom, Solflare and all popular Solana wallets for convenient interaction.</p>
+                <h3>🤖 Sniper Protection</h3>
+                <p>Advanced anti-bot mechanics ensure fair launches for your community. No more unfair advantages for bots.</p>
             </div>
             <div class="feature-card">
-                <h3>📞 24/7 Support</h3>
-                <p>Our team is always ready to help via Discord with any token creation questions.</p>
+                <h3>🎨 Full Customization</h3>
+                <p>Complete control over supply, decimals, metadata, and all token parameters. Make it truly yours.</p>
             </div>
             <div class="feature-card">
-                <h3>🎛 Flexible Customization</h3>
-                <p>Customize supply, decimals, authorities, and metadata to suit your specific project needs.</p>
+                <h3>🌐 24/7 Support</h3>
+                <p>Professional engineering team available round the clock. Get help whenever you need it via Discord or chat.</p>
             </div>
         </div>
     </section>
 
-    <section class="container" style="margin-bottom: 80px;">
-        <h2 style="text-align: center; margin-bottom: 40px;">Frequently Asked Questions</h2>
-        
+    <!-- Testimonials Section -->
+    <section class="container">
+        <h2 class="section-title">Community Trust</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="user-profile">
+                    <div class="user-avatar" style="background: linear-gradient(135deg, #6d57ff, #9d7fff);"></div>
+                    <div class="user-info">
+                        <h4>Alex G.</h4>
+                        <span>Token Creator</span>
+                    </div>
+                </div>
+                <p class="quote">"Luna Launch made it incredibly easy. I launched my meme coin in 3 minutes without writing a single line of code. The interface is intuitive and professional."</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="user-profile">
+                    <div class="user-avatar" style="background: linear-gradient(135deg, #d946ef, #f97fff);"></div>
+                    <div class="user-info">
+                        <h4>Sarah L.</h4>
+                        <span>DeFi Developer</span>
+                    </div>
+                </div>
+                <p class="quote">"The security features like Sniper Protection are game changers. My community had the fairest launch possible thanks to Luna's advanced anti-bot mechanics."</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="user-profile">
+                    <div class="user-avatar" style="background: linear-gradient(135deg, #00ff9d, #00cc7d);"></div>
+                    <div class="user-info">
+                        <h4>Mike T.</h4>
+                        <span>Crypto Investor</span>
+                    </div>
+                </div>
+                <p class="quote">"I only invest in tokens launched via Luna. The verified contracts and transparent process give me complete peace of mind. Trust is everything in crypto."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
         <div class="faq-container">
             <div class="faq-item">
-                <button class="faq-question">What is Luna Launch?</button>
+                <button class="faq-question">Is coding knowledge required to launch a token?</button>
                 <div class="faq-answer">
-                    <p>It's a premium SaaS platform that enables users to launch new tokens on the Solana blockchain without coding. We handle the smart contract security so you can focus on marketing.</p>
+                    <p>No coding knowledge is required whatsoever. Luna Launch handles all the technical complexity for you. Simply fill out a form with your token details, and our platform creates the smart contract, deploys it to the Solana blockchain, and mints your tokens automatically. It's designed for non-technical users.</p>
                 </div>
             </div>
-
             <div class="faq-item">
-                <button class="faq-question">How do I create a token?</button>
+                <button class="faq-question">How much does it cost to create a token?</button>
                 <div class="faq-answer">
-                    <p>Simply go to the 'Create Token' page, fill in your token name, symbol, and supply. If you want advanced features like revoking authorities or adding metadata, toggle those options on and click create.</p>
+                    <p>The base fee is only 0.2 SOL, which includes token creation and basic features. Optional upgrades like revoking authorities (+0.1 SOL each), premium features like Fast-Track listing (+0.5 SOL), and Anti-Rug Certificate (+0.8 SOL) are available. Most users spend between 0.2 to 1.0 SOL total. There are no hidden fees.</p>
                 </div>
             </div>
-
             <div class="faq-item">
-                <button class="faq-question">Do I need programming skills?</button>
+                <button class="faq-question">Is Luna Launch safe and secure?</button>
                 <div class="faq-answer">
-                    <p>No. Luna Launch handles all the complex Rust smart contract interactions and SPL Token standards for you.</p>
+                    <p>Yes, absolutely. All our smart contracts are professionally audited and open-source. We never have access to your private keys or wallet. All operations happen transparently on-chain. Over 12,400 tokens have been successfully launched with $45M+ in liquidity locked. We use industry-standard security practices and regular third-party audits.</p>
                 </div>
             </div>
-
             <div class="faq-item">
-                <button class="faq-question">How does the Liquidity Pool work?</button>
+                <button class="faq-question">Can I update my token information after creation?</button>
                 <div class="faq-answer">
-                    <p>When you enable the Liquidity Pool option, you can deposit SOL alongside your new token. This creates a trading pair on Raydium instantly, allowing people to buy your token the moment it launches.</p>
+                    <p>Yes, unless you revoke Update Authority. By default, you can update your token's metadata (name, symbol, logo, description) at any time. However, if you enable "Revoke Update" for enhanced security and immutability, metadata becomes permanently locked. This is often preferred by serious projects to build trust with investors.</p>
                 </div>
             </div>
-
             <div class="faq-item">
-                <button class="faq-question">Is it safe to use?</button>
+                <button class="faq-question">How does the verification process work?</button>
                 <div class="faq-answer">
-                    <p>Yes. We use standard Solana SPL token programs. We do not have access to your private keys. The payment process is transparent, and authority revocation ensures investor safety.</p>
+                    <p>Tokens created through Luna Launch are automatically verified on Solscan and other major explorers. The verification includes your metadata, logo, and all relevant information. This happens within minutes of creation. Verified tokens show a blue checkmark on explorers, increasing trust and legitimacy with potential investors.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What is the Liquidity Pool feature?</button>
+                <div class="faq-answer">
+                    <p>The Liquidity Pool feature allows you to instantly create a trading pair on Raydium DEX. You provide SOL and your tokens, and we automatically create the pool and enable trading. This is FREE to create (you just provide the assets). It's the fastest way to make your token tradeable immediately after launch.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 40px; border-top: 1px solid var(--card-border); color: var(--text-muted);">
-        <p>&copy; 2025 Luna Launch. All rights reserved.</p>
-        <p style="font-size: 0.9rem; margin-top: 10px;">Terms of Service</p>
+    <!-- Footer / CTA Section -->
+    <footer style="border-top: 1px solid rgba(255,255,255,0.1); padding: 80px 0; text-align: center; color: var(--text-muted);">
+        <h2 style="color: white; margin-bottom: 20px; font-size: 2.5rem; font-weight: 800;">Ready to launch your token?</h2>
+        <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 1.1rem;">Join 12,400+ successful projects on Solana</p>
+        <a href="create-token.html" class="btn-large">Create Token Now</a>
+        <div style="margin-top: 60px; font-size: 0.9rem; color: #666;">
+            &copy; 2025 Luna Launch. All rights reserved. <br>
+            <a href="#" style="color: #666; margin-right: 20px; text-decoration: none;">Terms of Service</a>
+            <a href="#" style="color: #666; text-decoration: none;">Privacy Policy</a>
+        </div>
     </footer>
+
+    <!-- Professional Chatbot -->
+    <div class="chatbot-container">
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <span>Luna Assistant</span> 
+                <span style="cursor:pointer;" id="closeChat">✕</span>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="chat-msg msg-bot">
+                    👋 Welcome to Luna Launch! I'm your AI assistant.<br><br>
+                    I can help you with:<br>
+                    • Token creation process<br>
+                    • Payment & pricing<br>
+                    • Wallet setup<br>
+                    • Security questions<br>
+                    • Technical support
+                </div>
+                <div class="chat-options">
+                    <button class="chat-opt-btn" onclick="handleChatOption('launch')">🚀 How to Launch?</button>
+                    <button class="chat-opt-btn" onclick="handleChatOption('cost')">💰 Pricing Info</button>
+                    <button class="chat-opt-btn" onclick="handleChatOption('wallet')">👛 Wallet Help</button>
+                    <button class="chat-opt-btn" onclick="handleChatOption('payment')">💳 Payment Help</button>
+                    <button class="chat-opt-btn" onclick="handleChatOption('security')">🛡️ Is it Safe?</button>
+                    <button class="chat-opt-btn" onclick="handleChatOption('glitch')">🐛 Report Issue</button>
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-btn" id="toggleChat">💬</div>
+    </div>
 
     <script src="script.js"></script>
 </body>
