@@ -3,206 +3,351 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Token - Luna Launch</title>
+    <meta name="description" content="Create your Solana SPL token in minutes. Professional token launcher with no coding required. Trusted by 12,400+ projects.">
+    <title>Create Token - Luna Launch | Professional Solana Token Creator</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
 </head>
 <body>
 
-    <div class="bg-stars" id="bgStars">
-        </div>
+    <!-- Animated Background -->
+    <div class="bg-universe">
+        <div class="nebula n1"></div>
+        <div class="nebula n2"></div>
+        <div id="starContainer"></div>
+    </div>
 
+    <!-- Navigation Bar with Mobile Support -->
     <nav class="navbar" id="navbar">
         <div class="nav-brand">
-            <span style="font-size: 20px;">🌙</span> Luna Launch
+            <span style="font-size: 24px;">🌙</span> Luna Launch
         </div>
+        
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="create-token.html" class="active">Create Token</a>
-            <a href="https://raydium.io/swap/?inputMint=sol&outputMint=4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R">Liquidity Pool</a>
-            <a href="https://discord.com/invite/lunalaunch">Support</a>
+            <a href="https://raydium.io/swap" target="_blank" rel="noopener">Liquidity Pool</a>
+            <a href="https://discord.com/invite/lunalaunch" target="_blank" rel="noopener">Support</a>
         </div>
+        
+        <!-- Mobile Menu Toggle -->
+        <div class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
         <button class="btn-connect" id="walletBtn">Connect Wallet</button>
     </nav>
 
-    <div class="container">
-        <div class="creator-card">
-            <h2 style="text-align: center; margin-bottom: 10px;">Solana Token Creator</h2>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">Deploy your Solana coin effortlessly in seconds.</p>
+    <!-- Token Creation Form -->
+    <div class="creator-wrapper">
+        <div class="container">
+            <div class="creator-card">
+                <h2 style="text-align: center; margin-bottom: 10px; font-weight: 800; font-size: 2rem;">Create Solana Token</h2>
+                <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px; font-size: 1.05rem;">Launch your SPL token on the Solana blockchain in minutes. No coding required.</p>
 
-            <form id="tokenForm">
-                <div class="form-group">
-                    <label>Token Name *</label>
-                    <input type="text" class="input-field" placeholder="e.g. Luna Coin" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Token Symbol *</label>
-                    <input type="text" class="input-field" placeholder="e.g. LUNA" maxlength="10" required>
-                </div>
-
-                <div style="display: flex; gap: 20px;">
-                    <div class="form-group" style="flex: 1;">
-                        <label>Decimals</label>
-                        <input type="number" class="input-field" value="9" min="0" max="9">
-                    </div>
-                    <div class="form-group" style="flex: 1;">
-                        <label>Supply</label>
-                        <input type="number" class="input-field" value="1000000000">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Logo</label>
-                    <div class="file-upload" id="logoUploadBox">
-                        <input type="file" id="logoInput" accept="image/png, image/jpeg, image/gif">
-                        
-                        <div class="upload-content">
-                            <span class="upload-icon">☁️</span>
-                            <p style="color: var(--text-muted); font-size: 0.9rem;">Click or Drag to Upload Image</p>
-                        </div>
-                        
-                        <img src="" alt="Preview" class="preview-image" id="logoPreview">
-                    </div>
-                </div>
-
-                <div class="toggle-row">
-                    <div class="toggle-info">
-                        <h4>Creator's Info <span class="cost-badge">+0.1 SOL</span></h4>
-                        <p>Add creator details to metadata</p>
-                    </div>
-                    <label class="switch">
-                        <input type="checkbox" id="toggleCreator">
-                        <span class="slider"></span>
-                    </label>
-                </div>
-                <div class="hidden-section" id="sectionCreator">
+                <form id="tokenForm">
+                    <!-- Basic Token Information -->
                     <div class="form-group">
-                        <label>Creator Name</label>
-                        <input type="text" class="input-field" placeholder="Your Name or Org">
+                        <label>Token Name *</label>
+                        <input type="text" class="input-field" placeholder="e.g. Moon Coin" required>
                     </div>
+                    
                     <div class="form-group">
-                        <label>Creator Website</label>
-                        <input type="url" class="input-field" placeholder="https://">
+                        <label>Token Symbol *</label>
+                        <input type="text" class="input-field" placeholder="e.g. MOON" maxlength="10" required style="text-transform: uppercase;">
                     </div>
-                </div>
-
-                <div class="toggle-row">
-                    <div class="toggle-info">
-                        <h4>Social Links <span class="cost-badge">+0.1 SOL</span></h4>
-                        <p>Add Telegram, Twitter & Website</p>
-                    </div>
-                    <label class="switch">
-                        <input type="checkbox" id="toggleSocials">
-                        <span class="slider"></span>
-                    </label>
-                </div>
-                <div class="hidden-section" id="sectionSocials">
-                    <div class="form-group">
-                        <label>Telegram Group</label>
-                        <input type="url" class="input-field" placeholder="https://t.me/...">
-                    </div>
-                    <div class="form-group">
-                        <label>X / Twitter</label>
-                        <input type="url" class="input-field" placeholder="https://x.com/...">
-                    </div>
-                    <div class="form-group">
-                        <label>Website</label>
-                        <input type="url" class="input-field" placeholder="https://...">
-                    </div>
-                </div>
-
-                <div class="toggle-row">
-                    <div class="toggle-info">
-                        <h4>Revoke Freeze <span class="cost-badge">+0.1 SOL</span></h4>
-                        <p>Prevent anyone from freezing assets</p>
-                    </div>
-                    <label class="switch">
-                        <input type="checkbox" class="price-trigger">
-                        <span class="slider"></span>
-                    </label>
-                </div>
-
-                <div class="toggle-row">
-                    <div class="toggle-info">
-                        <h4>Revoke Mint <span class="cost-badge">+0.1 SOL</span></h4>
-                        <p>Prevent creating more tokens</p>
-                    </div>
-                    <label class="switch">
-                        <input type="checkbox" class="price-trigger">
-                        <span class="slider"></span>
-                    </label>
-                </div>
-
-                <div class="toggle-row">
-                    <div class="toggle-info">
-                        <h4>Revoke Update <span class="cost-badge">+0.1 SOL</span></h4>
-                        <p>Make metadata immutable</p>
-                    </div>
-                    <label class="switch">
-                        <input type="checkbox" class="price-trigger">
-                        <span class="slider"></span>
-                    </label>
-                </div>
-
-                <div class="toggle-row">
-                    <div class="toggle-info">
-                        <h4>Luna Liquidity Pool <span class="cost-badge" style="color: #00ff9d;">FREE</span></h4>
-                        <p>Create a pool immediately</p>
-                    </div>
-                    <label class="switch">
-                        <input type="checkbox" id="togglePool">
-                        <span class="slider"></span>
-                    </label>
-                </div>
-                <div class="hidden-section" id="sectionPool">
+                    
                     <div style="display: flex; gap: 20px;">
                         <div class="form-group" style="flex: 1;">
-                            <label>SOL Amount</label>
-                            <input type="number" id="poolSolInput" class="input-field" placeholder="0.0" step="any" min="0">
+                            <label>Decimals</label>
+                            <input type="number" class="input-field" value="9" min="0" max="9">
                         </div>
                         <div class="form-group" style="flex: 1;">
-                            <label>Token Amount</label>
-                            <input type="number" class="input-field" placeholder="0.0">
+                            <label>Total Supply</label>
+                            <input type="number" class="input-field" value="1000000000" min="1">
                         </div>
                     </div>
-                </div>
 
-                <div class="form-group" style="margin-top: 24px;">
-                    <label>Enter token recipient *</label>
-                    <input type="text" class="input-field" placeholder="Wallet Address" required>
-                </div>
-
-                <div class="action-area">
-                    <div class="total-cost">
-                        <span>Total Fees:</span>
-                        <span class="cost-value"><span id="totalDisplay">0.2</span> SOL</span>
+                    <!-- Logo Upload -->
+                    <div class="form-group">
+                        <label>Token Logo (Optional)</label>
+                        <div class="file-upload" id="logoUploadBox">
+                            <input type="file" id="logoInput" accept="image/png, image/jpeg, image/gif, image/webp">
+                            <div class="upload-content">
+                                <span style="font-size: 40px;">☁️</span>
+                                <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 10px;">Click or drag image here</p>
+                                <p style="color: #666; font-size: 0.8rem; margin-top: 5px;">PNG, JPG, GIF (Max 5MB)</p>
+                            </div>
+                            <img src="" class="preview-image" id="logoPreview" alt="Logo preview">
+                        </div>
                     </div>
-                    <button type="submit" class="btn-launch">Create Token</button>
-                </div>
-            </form>
+
+                    <!-- Optional Features -->
+                    <div style="margin: 40px 0 20px; padding-top: 30px; border-top: 2px solid rgba(255,255,255,0.05);">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 5px; font-weight: 700;">Optional Features</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Enhance your token with additional features</p>
+                    </div>
+
+                    <!-- Creator Info Toggle -->
+                    <div class="toggle-row">
+                        <div class="toggle-info">
+                            <h4>Creator Information <span class="cost-badge">+0.1 SOL</span></h4>
+                            <p>Add your name and details to the token metadata</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="toggleCreator" class="price-trigger" data-name="Creator Info" data-cost="0.1">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="hidden-section" id="sectionCreator">
+                        <div class="form-group">
+                            <label>Creator Name</label>
+                            <input type="text" class="input-field" placeholder="Your name or project name">
+                        </div>
+                    </div>
+
+                    <!-- Social Links Toggle -->
+                    <div class="toggle-row">
+                        <div class="toggle-info">
+                            <h4>Social Links <span class="cost-badge">+0.1 SOL</span></h4>
+                            <p>Add Telegram, Twitter & Website URLs to your token</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="toggleSocials" class="price-trigger" data-name="Social Links" data-cost="0.1">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="hidden-section" id="sectionSocials">
+                        <div class="form-group">
+                            <label>Telegram URL</label>
+                            <input type="url" class="input-field" placeholder="https://t.me/yourgroup">
+                        </div>
+                        <div class="form-group">
+                            <label>Twitter URL</label>
+                            <input type="url" class="input-field" placeholder="https://twitter.com/yourproject">
+                        </div>
+                        <div class="form-group">
+                            <label>Website URL</label>
+                            <input type="url" class="input-field" placeholder="https://yourwebsite.com">
+                        </div>
+                    </div>
+
+                    <!-- Security Features -->
+                    <div style="margin: 30px 0 20px; padding-top: 30px; border-top: 2px solid rgba(255,255,255,0.05);">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 5px; font-weight: 700;">🔒 Security Features</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Recommended for serious projects</p>
+                    </div>
+
+                    <div class="toggle-row">
+                        <div class="toggle-info">
+                            <h4>Revoke Freeze Authority <span class="cost-badge">+0.1 SOL</span></h4>
+                            <p>Permanently remove ability to freeze token accounts. Required by most CEXs.</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" class="price-trigger" data-name="Revoke Freeze" data-cost="0.1">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="toggle-row">
+                        <div class="toggle-info">
+                            <h4>Revoke Mint Authority <span class="cost-badge">+0.1 SOL</span></h4>
+                            <p>Permanently disable minting new tokens. Locks total supply forever.</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" class="price-trigger" data-name="Revoke Mint" data-cost="0.1">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="toggle-row">
+                        <div class="toggle-info">
+                            <h4>Revoke Update Authority <span class="cost-badge">+0.1 SOL</span></h4>
+                            <p>Make metadata immutable. Cannot be changed after creation.</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" class="price-trigger" data-name="Revoke Update" data-cost="0.1">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <!-- Premium Features -->
+                    <div style="margin: 30px 0 20px; padding-top: 30px; border-top: 2px solid rgba(255, 215, 0, 0.15);">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 5px; font-weight: 700;">⭐ Premium Features</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Exclusive features for competitive advantage</p>
+                    </div>
+
+                    <div class="toggle-row" style="background: rgba(255, 215, 0, 0.03); border-radius: 12px; padding: 22px 15px;">
+                        <div class="toggle-info">
+                            <h4>🚀 Raydium Fast-Track <span class="cost-badge premium">+0.5 SOL</span></h4>
+                            <p>Priority listing queue for faster DEX visibility and trading.</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" class="price-trigger gold-trigger" data-name="Fast-Track" data-cost="0.5">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="toggle-row" style="background: rgba(255, 215, 0, 0.03); border-radius: 12px; padding: 22px 15px;">
+                        <div class="toggle-info">
+                            <h4>🛡️ Anti-Rug Certificate <span class="cost-badge premium">+0.8 SOL</span></h4>
+                            <p>Generate verified trust certificate to attract serious investors.</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" class="price-trigger gold-trigger" data-name="Anti-Rug Cert" data-cost="0.8">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="toggle-row" style="background: rgba(255, 215, 0, 0.03); border-radius: 12px; padding: 22px 15px;">
+                        <div class="toggle-info">
+                            <h4>💎 Diamond Hands Mode <span class="cost-badge premium">+0.4 SOL</span></h4>
+                            <p>Add sell tax mechanics to discourage paper hands and pump & dumps.</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" class="price-trigger gold-trigger" data-name="Diamond Hands" data-cost="0.4">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <!-- Liquidity Pool -->
+                    <div style="margin: 30px 0 20px; padding-top: 30px; border-top: 2px solid rgba(255,255,255,0.05);">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 5px; font-weight: 700;">💧 Liquidity Pool</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Enable instant trading on Raydium DEX</p>
+                    </div>
+
+                    <div class="toggle-row">
+                        <div class="toggle-info">
+                            <h4>Create Liquidity Pool <span class="cost-badge free">FREE</span></h4>
+                            <p>Automatically create a Raydium trading pair (you provide the assets)</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="togglePool">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="hidden-section" id="sectionPool">
+                        <div style="display: flex; gap: 20px;">
+                            <div class="form-group" style="flex: 1;">
+                                <label>SOL Amount</label>
+                                <input type="number" id="poolSolInput" class="input-field" placeholder="0.0" step="0.01" min="0">
+                                <p style="font-size: 0.8rem; color: #666; margin-top: 5px;">Liquidity to provide (separate from fees)</p>
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label>Token Amount</label>
+                                <input type="number" class="input-field" placeholder="0.0" step="1" min="0">
+                                <p style="font-size: 0.8rem; color: #666; margin-top: 5px;">Matching token amount for pool</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Token Recipient -->
+                    <div class="form-group" style="margin-top: 40px; padding-top: 30px; border-top: 2px solid rgba(255,255,255,0.05);">
+                        <label>Token Recipient Address *</label>
+                        <input type="text" class="input-field" placeholder="Your Solana wallet address" required>
+                        <p style="font-size: 0.85rem; color: #666; margin-top: 8px;">The wallet that will receive the newly minted tokens</p>
+                    </div>
+
+                    <!-- Action Area -->
+                    <div class="action-area">
+                        <div class="total-cost">
+                            <span>Total Service Fee:</span>
+                            <span class="cost-value"><span id="totalDisplay">0.20</span> SOL</span>
+                        </div>
+                        <button type="submit" class="btn-launch">🚀 Create Token Now</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
+    <!-- Professional Payment Modal -->
     <div class="modal-overlay" id="paymentModal">
         <div class="modal">
-            <h2>Your token is being created</h2>
-            <p>To launch the token, send the exact amount of SOL to the specified address below.</p>
-            
-            <p style="color: var(--text-muted); font-size: 0.9rem;">Amount to send:</p>
-            <div class="sol-amount"><span id="modalAmount">0.2</span> SOL</div>
-            
-            <div class="wallet-box" id="walletAddress">8jt9g3vCmyUqVGvy4qknYH4GTq4n6AurmJwuQjyFQtEo</div>
-            
-            <div class="modal-actions">
-                <button class="btn-copy" id="copyBtn">Copy Address</button>
-                <button class="btn-check" id="checkTxBtn">Check Transaction</button>
+            <button class="close-modal" id="closeModal">×</button>
+            <div class="modal-content">
+                <h2>🔐 Secure Payment</h2>
+                <p class="modal-subtitle">Blockchain-Verified Transaction</p>
+                
+                <!-- Payment Instructions -->
+                <div class="payment-instructions">
+                    <h3>📝 Payment Instructions</h3>
+                    <ol>
+                        <li><strong>Copy the wallet address</strong> below (click to copy)</li>
+                        <li><strong>Send EXACT amount</strong> of SOL from your Phantom wallet</li>
+                        <li><strong>Wait 5-10 seconds</strong> for blockchain confirmation</li>
+                        <li><strong>Click "I Sent the SOL"</strong> to verify payment</li>
+                    </ol>
+                    <div class="warning">
+                        ⚠️ <strong>IMPORTANT:</strong> Send the exact amount shown. Incorrect amounts will be refunded minus network fees.
+                    </div>
+                </div>
+                
+                <!-- Receipt Breakdown -->
+                <div class="receipt-box">
+                    <div class="receipt-item">
+                        <span>Base Fee</span>
+                        <span>0.2 SOL</span>
+                    </div>
+                    <div id="receiptList"></div>
+                    <div class="receipt-line"></div>
+                    <div class="receipt-total">
+                        <span>Total Amount</span>
+                        <span id="modalAmount">0.2 SOL</span>
+                    </div>
+                </div>
+
+                <!-- Wallet Address -->
+                <div class="wallet-box" id="walletAddress" title="Click to copy">
+                    8jt9g3vCmyUqVGvy4qknYH4GTq4n6AurmJwuQjyFQtEo
+                </div>
+                
+                <!-- Status Indicator -->
+                <div class="status-area" id="statusArea">
+                    <span class="loader"></span>
+                    <span id="statusText">⏳ Waiting for you to send the transaction...</span>
+                </div>
+
+                <!-- Confirmation Button -->
+                <button class="btn-check" id="checkTxBtn">✅ I Sent the SOL</button>
+                
+                <p style="font-size: 0.85rem; color: #666; margin-top: 20px; text-align: center;">
+                    <strong>Need help?</strong> If funds were deducted but token not received, contact us via <a href="https://discord.com/invite/lunalaunch" target="_blank" style="color: var(--primary); text-decoration: underline;">Discord Support</a> or use the chatbot below.
+                </p>
             </div>
-
-            <div id="statusText"></div>
-
-            <button class="close-modal" id="closeModal">Cancel / Close</button>
         </div>
+    </div>
+
+    <!-- Professional Chatbot -->
+    <div class="chatbot-container">
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <span>Luna Assistant</span> 
+                <span style="cursor:pointer;" id="closeChat">✕</span>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="chat-msg msg-bot">
+                    👋 Hey! Need help creating your token?<br><br>
+                    I can assist with:<br>
+                    • Form guidance<br>
+                    • Feature explanations<br>
+                    • Payment help<br>
+                    • Technical issues
+                </div>
+                <div class="chat-options">
+                    <button class="chat-opt-btn" onclick="handleChatOption('launch')">🚀 Creation Steps</button>
+                    <button class="chat-opt-btn" onclick="handleChatOption('features')">📋 Features Info</button>
+                    <button class="chat-opt-btn" onclick="handleChatOption('payment')">💳 Payment Help</button>
+                    <button class="chat-opt-btn" onclick="handleChatOption('glitch')">🐛 Report Issue</button>
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-btn" id="toggleChat">💬</div>
     </div>
 
     <script src="script.js"></script>
